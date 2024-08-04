@@ -1,9 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomePage } from "pages";
+import { Error404, HomePage } from "pages";
+import { MainLayout } from "layouts/mainLayout";
 
 export const routes = createBrowserRouter([
   {
-    path: "/",
-    Component: HomePage,
+    Component: MainLayout,
+    children: [
+      {
+        path: "/",
+        Component: HomePage,
+      },
+      {
+        path: "*",
+        Component: Error404,
+      },
+    ],
   },
 ]);
