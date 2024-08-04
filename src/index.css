@@ -9,6 +9,11 @@
 
 /* TYPOGRAPHY */
 
+@font-face {
+  font-family: pokemon;
+  src: url("./assets/fonts/Pokemon/Hollow.ttf");
+}
+
 h1 {
   display: block;
   font-size: 2em;
