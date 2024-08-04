@@ -1,7 +1,9 @@
+import { PokemonList } from "components/container/pokemonList";
+
 export function HomePage() {
   return (
     <>
-      <div className="border-none">Home</div>
+      <PokemonList />
     </>
   );
 }

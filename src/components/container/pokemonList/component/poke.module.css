@@ -1,0 +1,10 @@
+.pokeHover:hover {
+  cursor: pointer;
+  animation: pokeHover 0.2s;
+}
+
+@keyframes pokeHover {
+  50% {
+    margin-top: -12px;
+  }
+}
