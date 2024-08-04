@@ -14,8 +14,8 @@ export default {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
-      ghostWhite: "f8f8ff",
-      black: "010101",
+      ghostWhite: "#f8f8ff",
+      black: "#010101",
       midnight: "#121063",
 
       reddishOrange: "#ff0000",
@@ -25,12 +25,12 @@ export default {
       tanYellow: "#b3a125",
 
       lightBlue: "#30A7D7",
-      pink: "FF90C4",
-      green: "4DAD5B",
-      purple: "B38AEA",
+      pink: "#FF90C4",
+      green: "#4DAD5B",
+      purple: "#B38AEA",
 
-      gray: "4B4A49",
-      lighGray: "616161",
+      gray: "#4B4A49",
+      lightGray: "#F2F2F2",
     },
 
     extend: {},
