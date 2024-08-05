@@ -28,6 +28,7 @@ export default {
       pink: "#FF90C4",
       green: "#4DAD5B",
       purple: "#B38AEA",
+      darkPurple: "#8A3EAC",
 
       gray: "#4B4A49",
       lightGray: "#F2F2F2",
