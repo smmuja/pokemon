@@ -74,6 +74,7 @@ export function PokemonList() {
               /> */}
               {pokemon.types.map((item) => (
                 <button
+                  key={item.type.name}
                   className={`w-2/5 rounded-xl p-2 py-0 mr-2 text-ghostWhite ${getTypeClass(
                     pokemon.types
                   )}`}
