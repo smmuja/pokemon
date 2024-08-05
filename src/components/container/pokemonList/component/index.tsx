@@ -1,6 +1,7 @@
 // import { UseGetPokemon } from "../hooks";
 import { UseGetPokemon } from "components/container/pokemonList/hooks";
 import styles from "./poke.module.css";
+import { Link } from "react-router-dom";
 
 export function PokemonList() {
   const { data, isLoading, isError, detailList, loadMore } = UseGetPokemon();
@@ -33,11 +34,11 @@ export function PokemonList() {
 
   return (
     <>
-      <div className="sticky top-12 bg-midnight text-ghostWhite p-3">
+      <div className="sticky top-12 bg-midnight text-ghostWhite p-3 ">
         <h1 className="mt-0">Pokemon List</h1>
         {detailList?.length} Pokemons found
       </div>
-      <div className="m-1  p-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="m-1  p-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {detailList?.map((pokemon) => {
           const audio = new Audio(pokemon.cries.latest);
           audio.oncanplaythrough = function () {
@@ -47,13 +48,16 @@ export function PokemonList() {
           return (
             <div
               key={pokemon.name}
-              className="rounded-md m-1 p-1 bg-lightGray"
+              className="rounded-md m-1 p-1 bg-lightGray "
               onClick={() => {
                 audio.play();
               }}
             >
               {/* <h2>{pokemon.name}</h2> */}
-              <div className="bg-midnight h-1/2">
+              <div
+                className="bg-midnight flex flex-col justify-center
+               h-2/5 md:h-1/2"
+              >
                 <img
                   src={pokemon.sprites.other?.dream_world.front_default}
                   alt={pokemon.name}
@@ -70,24 +74,42 @@ export function PokemonList() {
               /> */}
               {pokemon.types.map((item) => (
                 <button
-                  className={`w-2/5 rounded-xl p-2 mr-2 text-ghostWhite ${getTypeClass(
+                  className={`w-2/5 rounded-xl p-2 py-0 mr-2 text-ghostWhite ${getTypeClass(
                     pokemon.types
                   )}`}
                 >
                   {item.type.name}
                 </button>
               ))}
-              <p>Height : {pokemon.height}</p>
-              <p>Weight : {pokemon.weight}</p>
-              <p>Base Experience: {pokemon.base_experience}</p>
-              <p>Move: {pokemon.moves[0].move.name}</p>
+              <div className="p-3">
+                <p>Height : {pokemon.height}</p>
+                <p>Weight : {pokemon.weight}</p>
+                <p>Base Experience: {pokemon.base_experience}</p>
+                <p>Move: {pokemon.moves[0].move.name}</p>
+                <p>Order: {pokemon.order}</p>
+              </div>
+              <div className="flex justify-center  items-center  text-center flex-row mx-3 my-2">
+                <Link
+                  to={`/pokemon/${pokemon.name}`}
+                  className="text-ghostWhite w-full
+                   bg-darkPurple px-4 py-2 rounded-md "
+                >
+                  View Details
+                </Link>
+              </div>
             </div>
           );
         })}
       </div>
-      <button className="m-3" onClick={loadMore} disabled={isLoading}>
-        Load More
-      </button>
+      <div className="flex flex-col justify-center">
+        <button
+          className="m-3 justify-center self-center bg-midnight text-ghostWhite hover:opacity-90"
+          onClick={loadMore}
+          disabled={isLoading}
+        >
+          Load More Pokémon
+        </button>
+      </div>
     </>
   );
 }
