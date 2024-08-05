@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Error404, HomePage } from "pages";
+import { Error404, HomePage, PokemonDetailPage } from "pages";
 import { MainLayout } from "layouts/mainLayout";
 
 export const routes = createBrowserRouter([
@@ -9,6 +9,10 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         Component: HomePage,
+      },
+      {
+        path: "/pokemon/:name",
+        Component: PokemonDetailPage,
       },
       {
         path: "*",
