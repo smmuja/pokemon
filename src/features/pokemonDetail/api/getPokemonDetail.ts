@@ -1,5 +1,5 @@
 import axios from "axios";
-import { PokemonDetailProps } from "components/container/pokemonList/types";
+import { PokemonDetailProps } from "features/pokemonList/types";
 
 export async function GetPokemonDetailByName(
   name: String

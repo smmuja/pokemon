@@ -1,9 +1,9 @@
-import { PokemonList } from "components/container/pokemonList";
+import { HomeWrapper } from "features/home";
 
 export function HomePage() {
   return (
     <>
-      <PokemonList />
+      <HomeWrapper />
     </>
   );
 }

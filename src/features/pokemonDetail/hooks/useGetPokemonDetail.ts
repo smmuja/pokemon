@@ -1,4 +1,4 @@
-import { GetPokemonDetailByName } from "components/container/pokemonDetail/api";
+import { GetPokemonDetailByName } from "features/pokemonDetail/api";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 

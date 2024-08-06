@@ -1,4 +1,4 @@
-import { UseGetPokemonDetail } from "components/container/pokemonDetail/hooks";
+import { UseGetPokemonDetail } from "features/pokemonDetail/hooks";
 
 export function ImageGalleryItem() {
   return (
