@@ -1,9 +1,8 @@
-// import { UseGetPokemon } from "../hooks";
-import { UseGetPokemon } from "components/container/pokemonList/hooks";
+import { UseGetPokemon } from "features/pokemonList/hooks";
 import styles from "./poke.module.css";
 import { Link } from "react-router-dom";
 
-export function PokemonList() {
+export function PokemonListWrapper() {
   const { data, isLoading, isError, detailList, loadMore } = UseGetPokemon();
 
   if (isLoading && !data) return <div>Loading ...</div>;
@@ -53,25 +52,17 @@ export function PokemonList() {
                 audio.play();
               }}
             >
-              {/* <h2>{pokemon.name}</h2> */}
-              <div
-                className="bg-midnight flex flex-col justify-center
-               h-2/5 md:h-1/2"
-              >
+              <div className="bg-midnight flex flex-col justify-center h-1/3 sm:h-1/2">
                 <img
                   src={pokemon.sprites.other?.dream_world.front_default}
                   alt={pokemon.name}
                   className={`${styles.pokeHover} max-w-full  max-h-full`}
                 />
               </div>
-              <div className="flex justify-between bg-midnight text-ghostWhite  p-1 px-3 my-2 text-xl font-semibold">
+              <div className="flex justify-between bg-midnight text-ghostWhite  p-1 px-3 my-2 sm:text-xl font-semibold">
                 <p># {pokemon.id}</p>
                 <p>{pokemon.name.toUpperCase()}</p>
               </div>
-              {/* <img
-                src={pokemon.sprites.other?.showdown.front_default}
-                alt={pokemon.name}
-              /> */}
               {pokemon.types.map((item) => (
                 <button
                   key={item.type.name}

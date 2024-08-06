@@ -1,4 +1,4 @@
-import { PokemonDetailWrapper } from "components/container/pokemonDetail";
+import { PokemonDetailWrapper } from "features/pokemonDetail";
 
 export function PokemonDetailPage() {
   return (

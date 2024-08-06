@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { fetchPokemonDetails, fetchPokemonList } from "../api/getPokemon";
-import {
-  PokemonDetailProps,
-  PokemonProps,
-} from "components/container/pokemonList/types";
+import { PokemonDetailProps, PokemonProps } from "features/pokemonList/types";
 
 export function UseGetPokemon() {
   const [pokemonList, setPokemonList] = useState<PokemonProps[]>([]);

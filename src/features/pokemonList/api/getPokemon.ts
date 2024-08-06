@@ -1,8 +1,5 @@
 import axios from "axios";
-import {
-  PokemonDetailProps,
-  PokemonProps,
-} from "components/container/pokemonList/types";
+import { PokemonDetailProps, PokemonProps } from "features/pokemonList/types";
 
 export async function fetchPokemonList(
   limit: number,
