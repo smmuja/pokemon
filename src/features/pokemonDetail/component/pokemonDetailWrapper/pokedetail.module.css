@@ -1,0 +1,48 @@
+progress {
+  border-radius: 7px;
+  /* width: 80%; */
+  /* height: 22px; */
+  margin-left: -11.5%;
+}
+progress::-webkit-progress-bar {
+  background-color: yellow;
+  border-radius: 7px;
+}
+progress::-webkit-progress-value {
+  background-color: blue;
+  border-radius: 7px;
+}
+progress::-moz-progress-bar {
+  background-color: yellow;
+  border-radius: 7px;
+}
+progress::-moz-progress-value {
+  background-color: blue;
+  border-radius: 7px;
+}
+
+.background {
+  background-color: rgb(2, 2, 51);
+  background-image: radial-gradient(
+    var(--midnightBlue) 5%,
+    var(--lighGrey) 30%,
+    var(--midnightBlue) 60%
+  );
+
+  color: antiquewhite;
+  border: 2px solid transparent;
+  padding: 1rem;
+}
+
+/* @media screen and (min-width: 1280px) {
+  .background {
+    width: 90%;
+    margin-left: 5%;
+    padding: 1%;
+  }
+} */
+
+.background {
+  --midnightBlue: #020233;
+  --lighGrey: #2c2b2b;
+}
