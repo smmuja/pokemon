@@ -1,6 +1,7 @@
 import { UseGetPokemon } from "features/pokemonList/hooks";
 import styles from "./poke.module.css";
 import { Link } from "react-router-dom";
+import { SearchPokemon } from "features/searchPokemon";
 
 export function PokemonListWrapper() {
   const { data, isLoading, isError, detailList, loadMore } = UseGetPokemon();
@@ -31,11 +32,16 @@ export function PokemonListWrapper() {
     return typeClasses[type] || "bg-gray"; // Default class if type is not found
   };
 
+  console.log(detailList);
+
   return (
     <>
-      <div className="sticky top-12 bg-midnight text-ghostWhite p-3 ">
-        <h1 className="mt-0">Pokemon List</h1>
-        {detailList?.length} Pokemons found
+      <div className="sticky top-12 bg-midnight text-ghostWhite p-3 flex flex-row justify-between">
+        <div>
+          <h1 className="mt-0">Pokemon List</h1>
+          {detailList?.length} Pokemons found
+        </div>
+        <SearchPokemon />
       </div>
       <div className="m-1  p-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {detailList?.map((pokemon) => {
