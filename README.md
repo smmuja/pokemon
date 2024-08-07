@@ -1,5 +1,38 @@
 # Pokemon App
 
+## Features
+
+### Desktop View
+
+![Desktop View](src/assets//docs/desktop-view.png)
+
+### Mobile View
+
+![Mobile View](src/assets//docs/mobile-view.png)
+
+### Search Function
+
+![Seacrh Function](src/assets//docs/search-function.png)
+
+### Load More
+
+![Load More](src/assets//docs/load-more.png)
+
+### Pokemon Detail Page
+
+![Pokemon Detail](src/assets//docs/pokemon-detail.png)
+
+## Resources
+
+### API
+
+- https://pokeapi.co/
+
+### Design Inspiration
+
+- https://www.pokemon.com
+- https://id.portal-pokemon.com/
+
 ## Tools and Dependencies
 
 - Yarn
