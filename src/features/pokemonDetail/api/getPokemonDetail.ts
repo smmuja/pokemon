@@ -1,3 +1,4 @@
+import { baseApi } from "api";
 import axios from "axios";
 import { PokemonDetailProps } from "features/pokemonList/types";
 
@@ -5,9 +6,7 @@ export async function GetPokemonDetailByName(
   name: String
 ): Promise<PokemonDetailProps> {
   try {
-    const response = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/${name}`
-    );
+    const response = await baseApi.get(`/pokemon/${name}`);
 
     return response.data;
   } catch (error) {
@@ -21,7 +20,7 @@ export async function GetPokemonDetail(
   id: Number
 ): Promise<PokemonDetailProps> {
   try {
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const response = await axios.get(`/pokemon/${id}`);
 
     return response.data;
   } catch (error) {
@@ -32,7 +31,7 @@ export async function GetPokemonDetail(
 }
 
 // Making API Call by pokemon name
-// https://pokeapi.co/api/v2/pokemon/pikachu
+// /pokemon/pikachu
 
 // And convert it to corresponding pokemon id
-// https://pokeapi.co/api/v2/pokemon/25
+// /pokemon/25
