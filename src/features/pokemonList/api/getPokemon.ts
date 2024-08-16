@@ -1,3 +1,4 @@
+import { baseApi } from "api";
 import axios from "axios";
 import { PokemonDetailProps, PokemonProps } from "features/pokemonList/types";
 
@@ -6,8 +7,9 @@ export async function fetchPokemonList(
   offset: number
 ): Promise<PokemonProps[]> {
   try {
-    const response = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
+    console.log(baseApi);
+    const response = await baseApi.get(
+      `/pokemon?limit=${limit}&offset=${offset}`
     );
     return response.data.results;
   } catch (error) {
